@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Special One ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffcc80;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        h1 {
+            color: #ff5722;
+        }
+        .laddu {
+            width: 50px;
+            position: absolute;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(100vh); }
+        }
+        .btn {
+            background-color: #ff9800;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey Sampriti! 🧡</h1>
+    <p>Chhota Bheem ka favorite ladoo hai... aur mera favorite tum! 😘</p>
+    <img src="Bheem.jpg" alt="Chhota Bheem" width="200">
+    
+    <div id="ladduRain"></div>
+    
+    <button class="btn" onclick="showSurprise()">Tap for Surprise! 💕</button>
+    <p id="message" style="display:none; font-size:20px; color:red;"></p>
+    
+    <script>
+        function createLaddu() {
+            let laddu = document.createElement("img");
+            laddu.src = "Ladoo.jpg"; // Replace with your ladoo image URL
+            laddu.alt = "Laddu";
+            laddu.className = "laddu";
+            laddu.style.left = Math.random() * window.innerWidth + "px";
+            document.getElementById("ladduRain").appendChild(laddu);
+            setTimeout(() => { laddu.remove(); }, 3000);
+        }
+        setInterval(createLaddu, 500);
+        
+        function showSurprise() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").innerText = "Tu toh Dholakpur ki sabse khoobsurat ladki hai! 💖";
+        }
+    </script>
+</body>
+</html>
